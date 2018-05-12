@@ -1,0 +1,33 @@
+﻿@model BlueRibbonsReview.Models.Campaign
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <div class="details-modal col-md-4  col-sm-12"  align="center">
+        <ul class="details-modal-list list-group">
+            <li class="list-group-item">
+                <img id="item-image" data-bind="attr:{src: imagePath}" src="@Html.DisplayFor(model => model.ImageUrL)"style="max-height:100%; max-width:100%" />
+            </li>
+            <li class="list-group-item">
+                <a class="btn-lg btn-amazon" style="background-color: black; color: #FFF" href="@Model.VendorsPurchaseURL" target="_newtab">See on Amazon</a>
+            </li>
+        </ul>
+    </div> 
+    <div class="details col-md-8 col-sm-12" style="position:relative">
+        <div class="details-info">
+            Regular Price:
+            <span class="item-retail-price" data-bind="text: createRetail">$@Html.DisplayFor(model => model.RetailPrice)</span>
+            <br />
+            
+            <div class="specialprice" data-bind="text: createSalePrice">$@Html.DisplayFor(model => model.SalePrice)</div>
+            <p>To request this product, please sign in: &nbsp;<button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Register","Account")'">Sign In</button></p>
+
+            <h3 class="details-description">Deal Description:</h3>
+            <p class="item-description" style="font-weight:400" data-bind="text: createDescription">@Html.DisplayFor(model => model.Description)</p>
+             @Html.ActionLink("Review this Product!", "Create", "Reviews")
+            <br />
+        </div>
+    </div>
+</div>
