@@ -11,7 +11,7 @@ Story2: ReviewsController.cs, Details.cshtml
 This story involved adding a link at the bottom of the Campaigns Index page. On the webpage, when a user clicks on a product, a link at the bottom takes them to a review site and allows them to write a review. In Visual Studio, I created an HTML.ActionLink(line 29) that users clicked on to be taken to the Create page in the Reviews Controller (Line 52). 
 
 Story3:CampaignsController.cs
-In this story I modified the SellerIndex of the CampaignsController.cs to diplay campaigns where the UserId equals that of users currently logged on and not those that are static UserId. When the user inputed their information their data would populate into the database.
+In this story I modified the SellerIndex (Line 30) of the CampaignsController.cs to diplay campaigns where the UserId equals that of users currently logged on and not those that are static UserId. When the user inputed their information their data would populate into the database.
 
 Story4:Review.cs
 In this story, I modified the Review class in the models folder in Visual Studio. I replaced the BuyerId with UserId and the Buyer Virtual navigation property with ApplicationUser. Making these changes simplified simplified the data structures and how the application interacted with Oauth.
